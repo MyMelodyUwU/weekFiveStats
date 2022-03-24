@@ -27,9 +27,11 @@ while(i <= 35) {
 
 
 axial_new
-axial_sub = subset(axial_new, axial_new$treatment == "4in" & axial_new$treatment == "6in")
-axial_sub = unique(axial_new$treatment == "4in" || "6in" , incomparables = TRUE)
+
+axial_sub = subset(axial_new$treatment == "4in" || axial_new$treatment == "6in")
 axial_sub
+axial_temp = unique(axial_new$treatment == "4in" | "6in" , incomparables = TRUE)
+axial_temp
 
 write.table(axial_sub, file = "axial_sub.txt")
 
