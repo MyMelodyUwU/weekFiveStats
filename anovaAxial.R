@@ -53,8 +53,11 @@ hist(resid(axial.aov))
 TukeyHSD(axial.aov)
 
 
-pV <- TukeyHSD(axial.aov)
+pV <- TukeyHSD(axial.aov,ordered = TRUE)
 pV
+
+write.table(pV, file = "tukeyResults.txt")
+
 
 tquant = qt(1-0.005, 34);
 
